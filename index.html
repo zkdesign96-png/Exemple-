@@ -36,6 +36,7 @@
         #opening-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('cover.png'); /* استدعاء مباشر ومطابق لجهازك */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -213,7 +214,7 @@
     <div id="invitation-content">
         
         <div class="card-wrapper">
-            <img src="" alt="خواتم نموذج دعوة زفاف" id="img1">
+            <img src="img1.png" alt="خواتم نموذج دعوة زفاف">
         </div>
 
         <div class="countdown-container">
@@ -236,11 +237,11 @@
         </div>
 
         <div class="card-wrapper details-card">
-            <img src="" alt="تفاصيل نموذج دعوة زفاف" id="img2">
+            <img src="img2.png" alt="تفاصيل نموذج دعوة زفاف">
         </div>
 
         <a href="https://maps.app.goo.gl/R6UqqrGAsDX9iJ3n9" target="_blank" class="card-wrapper map-card">
-            <img src="" alt="موقع قاعة الأفراح" id="img3">
+            <img src="img3.png" alt="موقع قاعة الأفراح">
             <div class="map-overlay">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>اضغط هنا لفتح الخريطة والاتجاهات</span>
@@ -250,27 +251,6 @@
     </div>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const currentUrl = window.location.href.split('?')[0].split('#')[0];
-            const folderPath = currentUrl.endsWith('index.html') ? currentUrl.replace('index.html', '') : (currentUrl.endsWith('/') ? currentUrl : currentUrl + '/');
-            const cacheBuster = new Date().getTime();
-
-            // معالجة ذكية لمحاولة جلب الصور بالمسافة وبدونها تلقائياً لحل المشكلة نهائياً
-            document.getElementById('opening-screen').style.backgroundImage = `url('${folderPath}couverture.png?v=${cacheBuster}')`;
-            
-            const i1 = document.getElementById('img1');
-            i1.src = `${folderPath}img1.png?v=${cacheBuster}`;
-            i1.onerror = () => { i1.src = `${folderPath}img1 .png?v=${cacheBuster}`; };
-
-            const i2 = document.getElementById('img2');
-            i2.src = `${folderPath}img2.png?v=${cacheBuster}`;
-            i2.onerror = () => { i2.src = `${folderPath}img2 .png?v=${cacheBuster}`; };
-
-            const i3 = document.getElementById('img3');
-            i3.src = `${folderPath}img3.png?v=${cacheBuster}`;
-            i3.onerror = () => { i3.src = `${folderPath}img3 .png?v=${cacheBuster}`; };
-        });
-
         function openInvitation() {
             const openingScreen = document.getElementById('opening-screen');
             const invitationContent = document.getElementById('invitation-content');
