@@ -36,7 +36,8 @@
         #opening-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('cover.png'); /* استدعاء مباشر ومطابق لجهازك */
+            /* 🔽 تم دمج رابط غلاف الفاخر المستضاف هنا */
+            background-image: url('https://i.ibb.co/fVngT9sF/cover.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -190,112 +191,5 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        @media (max-width: 600px) {
-            #invitation-content { padding: 25px 15px; }
-            .countdown-container { gap: 10px; margin-top: -30px; }
-            .time-box { min-width: 70px; padding: 10px; }
-            .time-box span { font-size: 1.8rem; }
-            .time-box label { font-size: 0.85rem; }
-            .map-overlay { opacity: 1; padding: 40px 10px 15px; font-size: 1.1rem; } 
-        }
-    </style>
-</head>
-<body>
-
-    <div id="opening-screen" onclick="openInvitation()">
-        <div class="click-hint">اضغط لفتح الدعوة ✉</div>
-    </div>
-
-    <div id="invitation-content">
-        
-        <div class="card-wrapper">
-            <img src="img1.png" alt="خواتم نموذج دعوة زفاف">
-        </div>
-
-        <div class="countdown-container">
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <label>ثانية</label>
-            </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <label>دقيقة</label>
-            </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <label>ساعة</label>
-            </div>
-            <div class="time-box">
-                <span id="days">00</span>
-                <label>يوم</label>
-            </div>
-        </div>
-
-        <div class="card-wrapper details-card">
-            <img src="img2.png" alt="تفاصيل نموذج دعوة زفاف">
-        </div>
-
-        <a href="https://maps.app.goo.gl/R6UqqrGAsDX9iJ3n9" target="_blank" class="card-wrapper map-card">
-            <img src="img3.png" alt="موقع قاعة الأفراح">
-            <div class="map-overlay">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>اضغط هنا لفتح الخريطة والاتجاهات</span>
-            </div>
-        </a>
-        
-    </div>
-
-    <script>
-        function openInvitation() {
-            const openingScreen = document.getElementById('opening-screen');
-            const invitationContent = document.getElementById('invitation-content');
-            
-            openingScreen.style.opacity = '0';
-            openingScreen.style.transform = 'scale(1.05)';
-            openingScreen.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                openingScreen.style.display = 'none';
-                document.body.style.backgroundColor = 'var(--bg-color)'; 
-                document.body.style.overflow = 'auto';
-                
-                invitationContent.style.opacity = '1';
-                invitationContent.style.transform = 'scale(1)';
-                invitationContent.style.pointerEvents = 'auto';
-            }, 900);
-        }
-
-        const weddingDate = new Date("August 6, 2026 16:30:00").getTime();
-
-        const timerFunction = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance < 0) {
-                clearInterval(timerFunction);
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-        }, 1000);
-    </script>
-</body>
-</html>
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0
 
