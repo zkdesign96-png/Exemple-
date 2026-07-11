@@ -250,16 +250,16 @@
     </div>
 
     <script>
-        // سكريبت لتوليد الروابط المطلقة تلقائياً وحل مشكلة الـ Cache في الاستضافات
         window.addEventListener('DOMContentLoaded', () => {
             const currentUrl = window.location.href.split('?')[0].split('#')[0];
             const folderPath = currentUrl.endsWith('index.html') ? currentUrl.replace('index.html', '') : (currentUrl.endsWith('/') ? currentUrl : currentUrl + '/');
             const cacheBuster = new Date().getTime();
 
-            document.getElementById('opening-screen').style.backgroundImage = `url('${folderPath}cover.png?v=${cacheBuster}')`;
-            document.getElementById('img1').src = `${folderPath}img1.png?v=${cacheBuster}`;
-            document.getElementById('img2').src = `${folderPath}img2.png?v=${cacheBuster}`;
-            document.getElementById('img3').src = `${folderPath}img3.png?v=${cacheBuster}`;
+            // دمج المسميات الدقيقة لملفاتك الحالية مع المسافات لتعمل فوراً دون تعديل من جيت هاب
+            document.getElementById('opening-screen').style.backgroundImage = `url('${folderPath}couverture.png?v=${cacheBuster}')`;
+            document.getElementById('img1').src = `${folderPath}img1 .png?v=${cacheBuster}`;
+            document.getElementById('img2').src = `${folderPath}img2 .png?v=${cacheBuster}`;
+            document.getElementById('img3').src = `${folderPath}img3 .png?v=${cacheBuster}`;
         });
 
         function openInvitation() {
@@ -309,3 +309,4 @@
     </script>
 </body>
 </html>
+
